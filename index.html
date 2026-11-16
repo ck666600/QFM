@@ -287,7 +287,7 @@ function drawArchitecture(){
 
   const dec=block(3,1050,580,360,260,'Decision-time graph');
   miniGraph(dec,1084,648,214,168,{r:13,glow:true,global:true,load:[.8,.5,.7,.4,.6]});
-  T(dec,1358,690,'× 2',28,C.text,'middle',600);
+  T(dec,1360,690,'2 layers',20,C.text,'middle',600);
   [['e','Local'],['r','Route'],['g','Global']].forEach(([k,label],j)=>{const y=730+j*34;if(k==='e')L(dec,`M1316 ${y-6}H1338`,C.e,2.6);if(k==='r')L(dec,`M1316 ${y-6}H1334`,C.r,2.4,{'marker-end':'url(#arch-route)'});if(k==='g')L(dec,`M1316 ${y-6}H1338`,C.feedback,1.6,{'stroke-dasharray':'2 4'});T(dec,1344,y,label,18,C.muted);});
 
   const head=block(4,650,580,360,260,'Service & idle scores');
