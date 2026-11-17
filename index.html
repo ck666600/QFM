@@ -132,7 +132,7 @@ body{font-size:var(--text-body);line-height:1.7}
 <tr data-model="simple_transformer"><th scope="row">Transformer</th><td>1.33753</td><td>1.25143</td><td>1.36792</td><td>1.64071</td></tr>
 <tr data-model="simple_rnn"><th scope="row">GRU</th><td>1.37580</td><td><strong>1.20300</strong></td><td>1.43678</td><td>2.03752</td></tr>
 </tbody></table></div>
-<p class="ablation-note">All models use offline training only, without DAgger. Transformer and GRU receive the full queue, resource and history feature set, including topology features (routing summaries and service connections), but do not use graph layers to model topology connections.</p>
+<p class="ablation-note">All three models have approximately matched parameter counts (~9.6M each; Transformer and GRU are within 0.1% of STGraph). All models use offline training only, without DAgger. Transformer and GRU receive the full queue, resource and history feature set, including topology features (routing summaries and service connections), but do not use graph layers to model topology connections.</p>
 </article>
 </div></section>
 <section class="closing"><div class="wrap"><div class="closing-top"><h2>Different networks.<br><em>Shared intelligence.</em></h2><p>QFM explores a transferable way to schedule: instead of hand-writing a policy for each network, one shared model decides from structure and experience. The results have limits, and the evidence stays open to inspection.</p></div><footer class="footer"><div><span>QFM / QUEUEING FOUNDATION MODEL</span></div><div><span>RESEARCH SHOWCASE · 2026.11</span></div></footer></div></section>
