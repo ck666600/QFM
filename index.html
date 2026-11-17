@@ -112,10 +112,11 @@ body{font-size:var(--text-body);line-height:1.7}
 <table class="ablation-table" data-metric="arithmetic_mean_task_cost_ratio" aria-label="Ablation experiments: arithmetic mean cost ratio, lower is better">
 <thead><tr><th scope="col">Model</th><th scope="col" data-group="all">All tasks<span>276 tasks</span></th><th scope="col" data-group="routing_none">No queue-to-queue transfers<span>72 tasks</span></th><th scope="col" data-group="routing_any">With queue-to-queue transfers<span>204 tasks</span></th><th scope="col" data-group="mp_adv5">MaxPressure advantage ≥5%<span>31 tasks</span></th></tr></thead>
 <tbody>
-<tr class="ablation-reference" data-model="original"><th scope="row">Original STGraph</th><td><strong>1.22774</strong></td><td>1.24132</td><td><strong>1.22294</strong></td><td><strong>1.53451</strong></td></tr>
-<tr data-model="simple_transformer"><th scope="row">Simple Transformer</th><td>1.33068</td><td>1.21670</td><td>1.37091</td><td>1.64677</td></tr>
-<tr data-model="simple_rnn"><th scope="row">Simple GRU</th><td>1.52765</td><td><strong>1.20730</strong></td><td>1.64071</td><td>2.97535</td></tr>
+<tr class="ablation-reference" data-model="original"><th scope="row">STGraph</th><td><strong>1.22774</strong></td><td>1.24132</td><td><strong>1.22294</strong></td><td><strong>1.53451</strong></td></tr>
+<tr data-model="simple_transformer"><th scope="row">Transformer</th><td>1.33068</td><td>1.21670</td><td>1.37091</td><td>1.64677</td></tr>
+<tr data-model="simple_rnn"><th scope="row">GRU</th><td>1.52765</td><td><strong>1.20730</strong></td><td>1.64071</td><td>2.97535</td></tr>
 </tbody></table></div>
+<p class="ablation-note">All models use offline training only, without DAgger. Transformer and GRU receive the full queue, resource and history feature set, including topology features (routing summaries and service connections), but do not use graph layers to model topology connections.</p>
 </article>
 </div></section>
 <section class="closing"><div class="wrap"><div class="closing-top"><h2>Different networks.<br><em>Shared intelligence.</em></h2><p>QFM explores a transferable way to schedule: instead of hand-writing a policy for each network, one shared model decides from structure and experience. The results have limits, and the evidence stays open to inspection.</p></div><footer class="footer"><div><span>QFM / QUEUEING FOUNDATION MODEL</span></div><div><span>RESEARCH SHOWCASE · 2026.11</span></div></footer></div></section>
