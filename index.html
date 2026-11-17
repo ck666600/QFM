@@ -129,8 +129,8 @@ body{font-size:var(--text-body);line-height:1.7}
 <thead><tr><th scope="col">Model</th><th scope="col" data-group="all">All tasks<span>276 tasks</span></th><th scope="col" data-group="routing_none">No queue-to-queue transfers<span>72 tasks</span></th><th scope="col" data-group="routing_any">With queue-to-queue transfers<span>204 tasks</span></th><th scope="col" data-group="mp_adv5">MaxPressure advantage ≥5%<span>31 tasks</span></th></tr></thead>
 <tbody>
 <tr class="ablation-reference" data-model="original"><th scope="row">STGraph</th><td><strong>1.22774</strong></td><td>1.24132</td><td><strong>1.22294</strong></td><td><strong>1.53451</strong></td></tr>
-<tr data-model="simple_transformer"><th scope="row">Transformer</th><td>1.33068</td><td>1.21670</td><td>1.37091</td><td>1.64677</td></tr>
-<tr data-model="simple_rnn"><th scope="row">GRU</th><td>1.52765</td><td><strong>1.20730</strong></td><td>1.64071</td><td>2.97535</td></tr>
+<tr data-model="simple_transformer"><th scope="row">Transformer</th><td>1.33753</td><td>1.25143</td><td>1.36792</td><td>1.64071</td></tr>
+<tr data-model="simple_rnn"><th scope="row">GRU</th><td>1.37580</td><td><strong>1.20300</strong></td><td>1.43678</td><td>2.03752</td></tr>
 </tbody></table></div>
 <p class="ablation-note">All models use offline training only, without DAgger. Transformer and GRU receive the full queue, resource and history feature set, including topology features (routing summaries and service connections), but do not use graph layers to model topology connections.</p>
 </article>
