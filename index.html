@@ -319,7 +319,7 @@ const ARCH=[
 {title:'01 / Inputs and history',copy:'Queues, resource pools, and their connections are the inputs, together with the last 64 steps of queue lengths, actions, and cost feedback. The true λ, μ, and h are never given to the model.'},
 {title:'02 / Space and time',copy:'Information is passed along the network at each step, then summarized over time, looking only at the present and the past.'},
 {title:'03 / Reading the history',copy:'The current state decides which parts of the history matter most for the next decision.'},
-{title:'04 / Decision graph',copy:'A second pass over the network lets every queue and pool see the whole system before acting.'},
+{title:'04 / Decision graph',copy:'Before acting, queues and pools exchange messages along local service connections and directed routing edges, without global attention.'},
 {title:'05 / Scoring the options',copy:'Each pool scores every queue it can serve, and also the option of staying idle.'},
 {title:'06 / A valid allocation',copy:'A small linear program turns the scores into an allocation that respects capacities and queue lengths. The same weights are used for every task.'}
 ];
@@ -395,9 +395,9 @@ function drawArchitecture(){
   add(read,'circle',{cx:1225,cy:466,r:15,fill:C.accent,'data-fuse':''});T(read,1225,473,'+',22,'#ffffff','middle',700);
 
   const dec=block(3,1050,580,360,260,'Decision-time graph');
-  miniGraph(dec,1084,648,214,168,{r:13,glow:true,global:true,load:[.8,.5,.7,.4,.6]});
+  miniGraph(dec,1084,648,214,168,{r:13,glow:true,load:[.8,.5,.7,.4,.6]});
   T(dec,1360,690,'2 layers',20,C.text,'middle',600);
-  [['e','Local'],['r','Route'],['g','Global']].forEach(([k,label],j)=>{const y=730+j*34;if(k==='e')L(dec,`M1316 ${y-6}H1338`,C.e,2.6);if(k==='r')L(dec,`M1316 ${y-6}H1334`,C.r,2.4,{'marker-end':'url(#arch-route)'});if(k==='g')L(dec,`M1316 ${y-6}H1338`,C.feedback,1.6,{'stroke-dasharray':'2 4'});T(dec,1344,y,label,18,C.muted);});
+  [['e','Local'],['r','Route']].forEach(([k,label],j)=>{const y=730+j*34;if(k==='e')L(dec,`M1316 ${y-6}H1338`,C.e,2.6);if(k==='r')L(dec,`M1316 ${y-6}H1334`,C.r,2.4,{'marker-end':'url(#arch-route)'});T(dec,1344,y,label,18,C.muted);});
 
   const head=block(4,650,580,360,260,'Service & idle scores');
   R(head,676,712,40,40,C.p,'none',6);T(head,696,739,'P',18,'#ffffff','middle',700);
