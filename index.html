@@ -211,8 +211,7 @@ body{font-size:var(--text-body);line-height:1.7}
 <tr data-model="transformer_k512_capacity_matched"><th scope="row">Transformer</th><td>1.33311</td><td><strong>1.11028</strong></td><td>1.41176</td><td>2.45216</td></tr>
 <tr data-model="gru_k512_capacity_matched"><th scope="row">GRU</th><td>2.11770</td><td>1.15333</td><td>2.45807</td><td>9.07551</td></tr>
 </tbody></table></div>
-<p class="ablation-note">All three K512 models have approximately matched parameter counts (~9.6M each; Transformer and GRU are within 0.1% of STGraph). Offline training only, without DAgger. All rows use the complete 276-task evaluation: 10 seeds per task, 10,000 events per seed. Each model was trained for 10 epochs; checkpoints were selected by the lowest offline validation action loss. The original STGraph results are reused, not re-evaluated.</p>
-<p class="ablation-note">K512 without decision-time global attention: full evaluation is still in progress. Partial results are not included.</p>
+<p class="ablation-note">Matched model size (~9.6M parameters). Offline training only, without DAgger.</p>
 </article>
 </div></section>
 <section class="closing"><div class="wrap"><div class="closing-top"><h2>Different networks.<br><em>Shared intelligence.</em></h2><p>QFM explores a transferable way to schedule: instead of hand-writing a policy for each network, one shared model decides from structure and experience.</p></div></div></section>
